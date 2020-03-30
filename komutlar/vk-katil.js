@@ -6,8 +6,19 @@ exports.run = (client, message, args) => {
 
   const roller = ["Vampir", "Köylü", "Savcı", "Hakim", "Doktor", "Medyum", "Şerif"]
   const rolata = roller[Math.floor(Math.random()*roller.length)];
-
   message.author.send(`${rolata}`);
+  
+  const embed = new Discord.RichEmbed()
+     .setColor("#0080FF")
+    .setAuthor(client.user.username,client.user.displayAvatarURL)
+    .setDescription(`
+ <@${message.author.id}> ${rolata}
+`,true)
+    
+    .setTimestamp()
+    .setFooter(`ŞÜPHELİ HESAPLAR YETKİLİ İLE İLETİŞİME GEÇSİNLER.!`)
+    let vkkimne = message.guild.channels.find(`name`, "vk-kim-ne");    
+    vkkimne.send(embed)
 };
 
 exports.conf = {
