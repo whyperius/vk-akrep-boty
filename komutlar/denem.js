@@ -14,7 +14,18 @@ module.exports.run = async (client, message, args) => {
         if(kanal) {
             const roller = ["Vampir", "Köylü", "Savcı", "Hakim", "Doktor", "Medyum", "Şerif"]
   const rolata = roller[Math.floor(Math.random()*roller.length)];
-  message.author.send(`${rolata}`);
+  kanal.users.send(`${rolata}`);
+          
+          const mesajat = new Discord.RichEmbed()
+      .setColor('RANDOM')
+      .setDescription('')
+
+      kanal.users.forEach(u => {
+u.sendEmbed(rolata)
+})
+message.react("‍")
+          
+          
         }
 }
 exports.conf = {
