@@ -2,6 +2,8 @@ const Discord = require("discord.js");
 const db = require("quick.db");
 const ayarlar = require("../ayarlar.json")
 exports.run = async (client, message, args) => {
+    const yasak = client.emojis.get('693976996321165385');
+  if (message.channel.id !== '693286888341110885') return message.channel.send(`${yasak} **Bu komutun kullanımı, bu kanalda engellenmiştir.**`).then(m => m.delete(5000));
     const kisi = db.fetch(`afkid_${message.author.id}_${message.guild.id}`)
   if(kisi) return;
   const sebep = args[0]
