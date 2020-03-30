@@ -1,38 +1,28 @@
-const Discord = require('discord.js');
-exports.run = (client, message, args) => {
-  if (message.author.id != "463419656661762048") return message.reply('Bunu Sadece Sahibim Kullanabilir');
-      
-  if (!message.guild) {
-  const ozelmesajuyari = new Discord.RichEmbed()
-  .setColor(0xFF0000)
-  .setTimestamp()
-  .setAuthor(message.author.username, message.author.avatarURL)
-  .addField('⚠ Uyarı ⚠', 'Bu  komutu özel mesajlarda kullanamazsın.');
-  return message.author.sendEmbed(ozelmesajuyari); }
-  let guild = message.guild;
-  let reason = args.slice(1).join(' ');
-  let user = message.mentions.users.first();
-  if (reason.length < 1) return message.reply('Ne göndericem onuda yazı ver.');
-  if (message.mentions.users.size < 1) return message.reply('Kime Mesaj atacam onuda yazı ver.').catch(console.error);
-  message.delete();
-  message.reply('Mesajını Gönderdim.')
-  const embed = new Discord.RichEmbed()
-  .setColor('RANDOM')
-  .setTitle(`**Sahibimden Bir Mesajın Var**`)
-  .setTimestamp()
-  .setDescription(reason);
-  return user.send(embed);
-};
-
+const Discord = module.require('discord.js');
+const ayarlar = require('../ayarlar.json')
+const prefix = ayarlar.prefix
+const client = new Discord.Client();
+module.exports.run = async (client, message, args) => {
+  
+  if (!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send('Bu komutu kullanabilmek için `Sunucuyu Yönet` yetkisi gerekmekte.')
+  
+       let kanal = message.guild.channels.get(args[0]);
+       
+       if(!kanal) {
+         message.channel.send('Kanal Çekilişi Yapmak İçin Kanal İdsini Giriniz. Doğru kullanım **!sesliçekiliş <sesli kanal id>**')
+       } 
+        if(kanal) {
+            const roller = ["Vampir", "Köylü", "Savcı", "Hakim", "Doktor", "Medyum", "Şerif"]
+  const rolata = roller[Math.floor(Math.random()*roller.length)];
+  message.author.send(`${rolata}`);
+        }
+}
 exports.conf = {
   enabled: true,
-  guildOnly: false,
-  aliases: ['pm','öm'],
-  permlevel: 4
+  guildOnly: true,
+  aliases: ['dd'],
+  permLevel: 0
 };
-
 exports.help = {
-  name: 'mesajat',
-  description: 'Bir kullanÄ±cÄ±ya Ã¶zel mesaj yollar.',
-  usage: 'mesajat'
+  name: 'dd'
 };

@@ -16,7 +16,7 @@ exports.run = (client, message, args) => {
 `,true)
     
     .setTimestamp()
-    .setFooter(`ŞÜPHELİ HESAPLAR YETKİLİ İLE İLETİŞİME GEÇSİNLER.!`)
+    .setFooter(`Vampir Köylü Oyunu..`)
     let vkkimne = message.guild.channels.find(`name`, "vk-kim-ne");    
     vkkimne.send(embed)
 };
