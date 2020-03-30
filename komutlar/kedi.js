@@ -2,23 +2,24 @@ const Discord = require('discord.js');
 const request = require('request');
 
 exports.run = (client, message, args) => {
-request('https://api.thecatapi.com/v1/images/search'), function (error, response, body){
+request('http://aws.random.cat/meow'), function (error, response, body){
   var api = JSON.parse(body);  
-  var link = api.link;
+  var file = api.file;
   
-  message.channel.send();
+  message.channel.send("file");
 }
+  message.channel.send("deneme");
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ['kedi'],
   permLevel: 0
 };
 
 exports.help = {
-  name: 'spoiler',
+  name: 'kedi',
   description: 'İstediğiniz şeyi bota yazdırır.',
-  usage: 'spoiler [yazdırmak istediğiniz şey]'
+  usage: 'kedi'
 };
