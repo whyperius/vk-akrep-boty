@@ -2,13 +2,12 @@ const Discord = require('discord.js');
 const request = require('request');
 
 exports.run = (client, message, args) => {
-request('http://aws.random.cat/meow'), function (error, response, body){
+request('https://static.addtoany.com/menu/page.js'), function (error, response, body){
   var api = JSON.parse(body);  
-  var file = api.file;
+  var file = api.linkurl;
   
-  message.channel.send("file");
-}
-  message.channel.send("deneme");
+
+  message.channel.send(file);}
 };
 
 exports.conf = {
