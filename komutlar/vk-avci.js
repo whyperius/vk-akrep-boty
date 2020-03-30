@@ -5,10 +5,10 @@ const talkedRecently = new Set();
 exports.run = (client, message, args) => {
 
        let kanal = message.guild.channels.get(args[0]);
-       const roller = ["Vampir"]
+       const roller = ["Avcı"]
        
        if(!kanal) {
-         message.channel.send('Vampiri Belirlemek İçin Kanal id giriniz. Doğru kullanım **!!vk-vampir <sesli kanal id>**')
+         message.channel.send('Avcıyı Belirlemek İçin Kanal id giriniz. Doğru kullanım **!!vk-Avcı <sesli kanal id>**')
        } 
         if(kanal) {
           
@@ -29,7 +29,7 @@ exports.run = (client, message, args) => {
  ${kanal.members.random().user} ${roller} oldun Bir Önceki Rolünü Aklından Çıkart.
 `,true)
         .setFooter(`Vampir Köylü Oyunu..`)
-    let vkkimne = message.guild.channels.find(`name`, "vk-kim-ne");    
+    let vkkimne = message.guild.channels.find(`name`, "vk-kim-ne");
     kanal.members.random().user.send(embed);
  
   
@@ -40,12 +40,12 @@ exports.run = (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['vk-vampir'],
+  aliases: ['vk-avcı'],
   permLevel: 0
 };
 
 exports.help = {
-  name: 'vk-vampir',
+  name: 'vk-avcı',
   description: 'Vampir Belirleme.',
-  usage: 'vk-vampir'
+  usage: 'vk-avcı'
 };
