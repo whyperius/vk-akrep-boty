@@ -1,7 +1,9 @@
 const Discord = require('discord.js');
+const db = require('quick.db');
 
 exports.run = (client, message, args) => {
-  
+  const roller = ["Vampir", "", "", "", "",""]
+  message.author.send();
 };
 
 exports.conf = {
