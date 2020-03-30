@@ -1,9 +1,13 @@
 const Discord = require('discord.js');
 const db = require('quick.db');
+const talkedRecently = new Set();
 
 exports.run = (client, message, args) => {
-  const roller = ["Vampir", "", "", "", "",""]
-  message.author.send();
+
+  const roller = ["Vampir", "Köylü", "Savcı", "Hakim", "Doktor", "Medyum", "Şerif"]
+  const rolata = roller[Math.floor(Math.random()*roller.length)];
+
+  message.author.send(`${rolata}`);
 };
 
 exports.conf = {
