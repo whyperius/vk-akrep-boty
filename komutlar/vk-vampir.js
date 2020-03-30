@@ -4,10 +4,16 @@ const talkedRecently = new Set();
 
 exports.run = (client, message, args) => {
 
-  const roller = ["Köylü", "Hakim", "Medyum", "Doktor", "Avcı"]
-  const rolata = roller[Math.floor(Math.random()*roller.length)];
-  
-  const embed = new Discord.RichEmbed()
+       let kanal = message.guild.channels.get(args[0]);
+       const roller = ["Vampir"]
+       
+       if(!kanal) {
+         message.channel.send('Vampiri Belirlemek İçin Kanal id giriniz. Doğru kullanım **!!vk-vampir <sesli kanal id>**')
+       } 
+        if(kanal) {
+          
+          
+ const embed = new Discord.RichEmbed()
      .setColor('RANDOM')
     .setDescription(`
  <@${message.author.id}> ${rolata}
@@ -15,7 +21,8 @@ exports.run = (client, message, args) => {
         .setFooter(`Vampir Köylü Oyunu..`)
     let vkkimne = message.guild.channels.find(`name`, "vk-kim-ne");    
     vkkimne.send(embed)
-    message.author.send(embed)
+    kanal.members.random().user.send(embed)
+        }
 };
 
 exports.conf = {
