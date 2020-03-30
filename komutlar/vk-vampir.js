@@ -16,24 +16,38 @@ exports.run = (client, message, args) => {
  const embed = new Discord.RichEmbed()
      .setColor('RANDOM')
     .setDescription(`
- <@${message.author.id}> ${rolata}
+ ${kanal.members.random().user} ${roller}
 `,true)
         .setFooter(`Vampir Köylü Oyunu..`)
     let vkkimne = message.guild.channels.find(`name`, "vk-kim-ne");    
     vkkimne.send(embed)
-    kanal.members.random().user.send(embed)
+    kanal.members.random().user.send(`${roller} oldun Bir Önceki Rolünü Aklından Çıkart.`);
         }
+  
+   const embed = new Discord.RichEmbed()
+     .setColor('RANDOM')
+    .setDescription(`
+ ${kanal.members.random().user} ${roller}
+`,true)
+        .setFooter(`Vampir Köylü Oyunu..`)
+    let vkkimne = message.guild.channels.find(`name`, "vk-kim-ne");    
+    vkkimne.send(embed)
+    kanal.members.random().user.send(`${roller} oldun Bir Önceki Rolünü Aklından Çıkart.`);
+ 
+  
+  
+  
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['vk-katil'],
+  aliases: ['vk-vampir'],
   permLevel: 0
 };
 
 exports.help = {
-  name: 'vk-katil',
-  description: 'Vampir Köylü Katılma.',
-  usage: 'vk-katil'
+  name: 'vk-vampir',
+  description: 'Vampir Belirleme.',
+  usage: 'vk-vampir'
 };
