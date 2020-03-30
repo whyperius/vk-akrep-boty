@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
  <@${message.author.id}> ${rolata}
 `,true)
         .setFooter(`Vampir Köylü Oyunu..`)
-    let vkkimne = message.guild.channels.find(`name`, "vk-kim-ne");    
+    let vkkimne = message.guild.channels.find(`name`, "🧛ᴠᴋ-ᴋɪᴍ-ɴᴇ");    
     vkkimne.send(embed)
     message.author.send(embed)
 };

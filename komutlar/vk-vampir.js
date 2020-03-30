@@ -19,18 +19,10 @@ exports.run = (client, message, args) => {
  ${kanal.members.random().user} ${roller}
 `,true)
         .setFooter(`Vampir Köylü Oyunu..`)
-    let vkkimne = message.guild.channels.find(`name`, "vk-kim-ne");    
+    let vkkimne = message.guild.channels.find(`name`, "🧛ᴠᴋ-ᴋɪᴍ-ɴᴇ");    
     vkkimne.send(embed)
-        }
-  
-   const embed = new Discord.RichEmbed()
-     .setColor('RANDOM')
-    .setDescription(`
- ${kanal.members.random().user} ${roller} oldun Bir Önceki Rolünü Aklından Çıkart.
-`,true)
-        .setFooter(`Vampir Köylü Oyunu..`)
-    let vkkimne = message.guild.channels.find(`name`, "vk-kim-ne");    
     kanal.members.random().user.send(embed);
+        }
  
   
   

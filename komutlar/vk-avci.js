@@ -4,7 +4,7 @@ const talkedRecently = new Set();
 
 exports.run = (client, message, args) => {
 
-       let kanal = message.guild.channels.get(args[0]);
+       let kanal = message.guild.channels.get('694129338450182175');
        const roller = ["Avcı"]
        
        if(!kanal) {
@@ -19,7 +19,7 @@ exports.run = (client, message, args) => {
  ${kanal.members.random().user} ${roller}
 `,true)
         .setFooter(`Vampir Köylü Oyunu..`)
-    let vkkimne = message.guild.channels.find(`name`, "vk-kim-ne");    
+    let vkkimne = message.guild.channels.find(`name`, "🧛ᴠᴋ-ᴋɪᴍ-ɴᴇ");    
     vkkimne.send(embed)
         }
   
@@ -29,7 +29,6 @@ exports.run = (client, message, args) => {
  ${kanal.members.random().user} ${roller} oldun Bir Önceki Rolünü Aklından Çıkart.
 `,true)
         .setFooter(`Vampir Köylü Oyunu..`)
-    let vkkimne = message.guild.channels.find(`name`, "vk-kim-ne");
     kanal.members.random().user.send(embed);
  
   
