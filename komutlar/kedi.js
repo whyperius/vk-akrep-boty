@@ -1,11 +1,25 @@
 const Discord = require('discord.js');
 const request = require('request');
+const PREFIX = "!!"
 
+var cat = "https://rand.cat/pic"
 exports.run = (client, message, args) => {
-request('https://rand.cat/pic'), function (error, response, body){
-  var api = JSON.parse(body);  
-  var link = api.img_url;
-  message.channel.send(link);}
+if (message.author.equals(client.user))return;
+
+if (!message.content.startsWith(PREFIX)) return;
+
+var args = message.content.substring(PREFIX.length).split(" ");
+
+switch (args[0].toLowerCase()) {
+    case "cat":
+        request({
+            img_url: cat,
+            json: true
+        }, function (error, response, body) {
+            console.log(body);
+        })
+        break;
+    }
 };
 
 exports.conf = {
