@@ -4,7 +4,7 @@ const talkedRecently = new Set();
 
 exports.run = (client, message, args) => {
 
-       let kanal = message.guild.channels.get(args[0]);
+       let kanal = message.guild.channels.get('694129338450182175');
        const roller = ["Vampir"]
        
        if(!kanal) {
