@@ -2,12 +2,10 @@ const Discord = require('discord.js');
 const request = require('request');
 
 exports.run = (client, message, args) => {
-request('https://static.addtoany.com/menu/page.js'), function (error, response, body){
+request('https://rand.cat/pic'), function (error, response, body){
   var api = JSON.parse(body);  
-  var file = api.linkurl;
-  
-
-  message.channel.send(file);}
+  var link = api.img_url;
+  message.channel.send(link);}
 };
 
 exports.conf = {
