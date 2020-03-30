@@ -1,43 +1,43 @@
-const Discord = require('discord.js');
-const db = require('quick.db');
-const talkedRecently = new Set();
+const Discord = module.require('discord.js');
+const ayarlar = require('../ayarlar.json')
+const prefix = ayarlar.prefix
+const client = new Discord.Client();
+module.exports.run = async (client, message, args) => {
+         const roller = ["Vampir"]
 
-exports.run = (client, message, args) => {
-
+  if (!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send('Bu komutu kullanabilmek için `Sunucuyu Yönet` yetkisi gerekmekte.')
+  
        let kanal = message.guild.channels.get('694129338450182175');
-       const roller = ["Vampir"]
        
        if(!kanal) {
-         message.channel.send('Vampiri Belirlemek İçin Kanal id giriniz. Doğru kullanım **!!vk-vampir <sesli kanal id>**')
+         message.channel.send('Kanal Çekilişi Yapmak İçin Kanal İdsini Giriniz. Doğru kullanım **!sesliçekiliş <sesli kanal id>**')
        } 
         if(kanal) {
-          
-          
- const embed = new Discord.RichEmbed()
-     .setColor('RANDOM')
-    .setDescription(`
- ${kanal.members.random().user} ${roller}
-`,true)
-        .setFooter(`Vampir Köylü Oyunu..`)
+          const secilen = kanal.members.random().user
+          const kanaldm = new Discord.RichEmbed()
+           .setColor('RANDOM')
+           .setDescription(`
+           ${secilen} ${roller}
+            `,true)
+        .   setFooter(`Vampir Köylü Oyunu..`)
+          const dm = new Discord.RichEmbed()
+           .setColor('RANDOM')
+           .setDescription(`
+           ${secilen} ${roller} Oldun Önceki Rolün Geçersiz Kalmıştır.
+            `,true)
+        .   setFooter(`Vampir Köylü Oyunu..`)
     let vkkimne = message.guild.channels.find(`name`, "🧛ᴠᴋ-ᴋɪᴍ-ɴᴇ");    
-    vkkimne.send(embed)
-    kanal.members.random().user.send(embed);
+        message.guild.channels.get(vkkimne.id).send(kanaldm)
+          secilen.send(dm);
         }
- 
   
-  
-  
-};
-
+}
 exports.conf = {
   enabled: true,
-  guildOnly: false,
+  guildOnly: true,
   aliases: ['vk-vampir'],
   permLevel: 0
 };
-
 exports.help = {
-  name: 'vk-vampir',
-  description: 'Vampir Belirleme.',
-  usage: 'vk-vampir'
+  name: 'vk-vampir'
 };
