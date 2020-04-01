@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const db = require('quick.db');
 
 exports.run = (client, message, args) => {
+  message.delete();
     const korona = new Discord.RichEmbed()
       .setColor("#0080FF")
       .setAuthor("∼ Saudade Mudita ∼" , "https://media.discordapp.net/attachments/694990915617554482/694992053943402668/m_obBlVh.png?size=220")
