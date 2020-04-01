@@ -1,9 +1,10 @@
 const Discord = require('discord.js');
+const db = require('quick.db');
 
 exports.run = (client, message, args) => {
     const korona = new Discord.RichEmbed()
       .setColor("#0080FF")
-      .setAuthor("∼ Saudade Mudita ∼" , "https://cdn.discordapp.com/attachments/694990915617554482/694992053943402668/m_obBlVh.png")
+      .setAuthor("∼ Saudade Mudita ∼" , "https://media.discordapp.net/attachments/694990915617554482/694992053943402668/m_obBlVh.png?size=220")
       .setDescription(`⌘ Korona ⌘
 
 **Korona Nedir?** 
@@ -26,6 +27,7 @@ Sorusu Olanlar İçin Sağlıkcı Arkadaşımızı Buraya Etiketliyorum. Soru So
       .setDescription(`⌘ <@669598135999528971> ⌘`)
        message.channel.send(korona)
        message.channel.send(hesap)
+
 };
 
 exports.conf = {
