@@ -143,3 +143,35 @@ client.on("message" , async message => {
   
 })
 // AFK \\
+
+/* SOHBET KANAL DEĞİŞEN YAZI */
+function cpanel1() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      client.channels.get(`695029275124039710`).setName(`KEYİFLİ SOHBETLER`);
+      cpanel2();
+    }, 1000);
+  });
+}
+
+function cpanel2() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      client.channels.get(`695029275124039710`).setName(`İREM <3 SÜLEYMAN`);
+      cpanel3();
+    }, 1500);
+  });
+}
+function cpanel3() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      client.channels.get(`695029275124039710`).setName(`SEVİLİYORSUNUZ`);
+      cpanel1();
+    }, 2000); //Hızı düşürmeyin
+  });
+}
+
+client.on("ready", async message => {
+  cpanel1();
+});
+/* SOHBET KANAL DEĞİŞEN YAZI */
