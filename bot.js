@@ -144,7 +144,7 @@ client.on("message" , async message => {
 })
 // AFK \\
 
-// \\
+// DEGİSEN SES KANALLARI \\
 
 client.on('guildMemberAdd', async(member) => {
 const kanal = `${member.user.username}`
@@ -155,13 +155,14 @@ channel.setName(kanal);
 //Sunucuya biri girdiğinde kanal ismi değiştirme
 client.on("guildMemberAdd", message => {
   client.channels
-    .get("684850292834959368")
+    .get("695038109535961130")
     .setName(`🔵 Kişi Sayısı: ${message.guild.memberCount} 📤`);
   // kanal id yazan yerlere sesli kanalın id'sini sağtıklayıp kopyalayın ve yapıştırın
 });
 //Sunucudan Çıktığın Kişi Sayını Azaltma
 client.on("guildMemberRemove", message => {
   client.channels
-    .get("684850292834959368")
+    .get("695038109535961130")
     .setName(`🔴 Kişi Sayısı: ${message.guild.memberCount} 📥`);
 });
+// DEGİSEN SES KANALLARI \\
