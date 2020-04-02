@@ -1,6 +1,10 @@
 const Discord = require('discord.js');
 exports.run = (client, message, args) => {
     message.delete()
+      if (!message.member.roles.find("name", "ᴍᴜᴅɪᴛᴀ ғᴇʀᴅɪ")) {
+        return message.channel.send(' **Bu Komutu Kullanmak için** \*`ᴍᴜᴅɪᴛᴀ ғᴇʀᴅɪ*\` **Rolüne Sahip Olman Lazım Bunun İçinde Tagımızı Almalısınız.** ')
+            .then(m => m.delete(5000));
+    }
   if (!message.guild) {
   const ozelmesajuyari = new Discord.RichEmbed()
   .setColor(0xFF0000)
