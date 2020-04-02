@@ -15,7 +15,7 @@ exports.run = (client, message, args) => {
   message.reply('Mesajını Gönderdim.')
   const embed = new Discord.RichEmbed()
   .setColor('RANDOM')
-  .setDescription(reason);
+  .setDescription(`**İnstagram:** *${reason}*`);
       let insta = message.guild.channels.find(`name`, "📸ɪɴsᴛᴀɢʀᴀᴍ");    
         message.guild.channels.get(insta.id).send(embed)
 };
@@ -23,7 +23,7 @@ exports.run = (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['insta'],
+  aliases: ['instagram', 'insta'],
   permlevel: 4
 };
 
