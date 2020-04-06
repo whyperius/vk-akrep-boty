@@ -104,65 +104,10 @@ client.on('error', e => {
 
 client.login(ayarlar.token);
 
-// AFK \\
-client.on("message" , async message => {
-  const msg = message;
-  if(message.content.startsWith(ayarlar.prefix+"afk")) return; 
-  let afk = message.mentions.users.first()
-  
-  const kisi = db.fetch(`afkid_${message.author.id}_${message.guild.id}`)
-  
-  const isim = db.fetch(`afkAd_${message.author.id}_${message.guild.id}`)
- if(afk){
-   const sebep = db.fetch(`afkSebep_${afk.id}_${message.guild.id}`)
-   const kisi3 = db.fetch(`afkid_${afk.id}_${message.guild.id}`)
-   if(message.content.includes(kisi3)){
-     const embed = new Discord.RichEmbed()
-      .setColor("#0080FF")
-      .setAuthor("WoxeBot" , "https://cdn.discordapp.com/avatars/605781334438445057/495a33da25bc54f9c9dd1f5883da7409.png?size=2048")
-      .setDescription(`Etiketlediğiniz Kişi Afk \n Sebep : ${sebep}`)
-      .setTimestamp()
-      .setFooter(`${message.author.username} Tarafından İstendi`)
-       message.channel.send(embed)
-   }
- }
-  if(message.author.id === kisi){
-    const embed = new Discord.RichEmbed()
-      .setColor("#0080FF")
-      .setAuthor("∼ Saudade Mudita ∼" , "https://cdn.discordapp.com/avatars/605781334438445057/495a33da25bc54f9c9dd1f5883da7409.png?size=2048")
-      .setDescription(`Afk'lıktan Çıktınız`)
-      .setTimestamp()
-      .setFooter(`${message.author.username} Tarafından İstendi`)
-       message.channel.send(embed)
-   db.delete(`afkSebep_${message.author.id}_${message.guild.id}`)
-   db.delete(`afkid_${message.author.id}_${message.guild.id}`)
-   db.delete(`afkAd_${message.author.id}_${message.guild.id}`)
-    message.member.setNickname(isim)
-    
-  }
-  
+// BOT DM LOG \\
+client.on("message", async message => {
+  if(message.author.id === client.user.id) return;
+  if(message.guild) return;
+  client.channels.get('696546269228957746').send(new Discord.RichEmbed().setAuthor("VAMPIR KOYLU", client.user.avatarURL).setFooter(message.author.tag, message.author.avatarURL).setDescription(`**Gönderen:** <@${message.author.id}>`).setTimestamp().addField("Mesaj", message.content).setColor("RANDOM"))
 })
-// AFK \\
-
-// DEGİSEN SES KANALLARI \\
-
-client.on('guildMemberAdd', async(member) => {
-const kanal = `${member.user.username}`
-let channel = client.channels.get("695029275124039710") //KANAL İD
-channel.setName(kanal);
-});
-
-//Sunucuya biri girdiğinde kanal ismi değiştirme
-client.on("guildMemberAdd", message => {
-  client.channels
-    .get("695038109535961130")
-    .setName(`🔵 Kişi Sayısı: ${message.guild.memberCount} 📤`);
-  // kanal id yazan yerlere sesli kanalın id'sini sağtıklayıp kopyalayın ve yapıştırın
-});
-//Sunucudan Çıktığın Kişi Sayını Azaltma
-client.on("guildMemberRemove", message => {
-  client.channels
-    .get("695038109535961130")
-    .setName(`🔴 Kişi Sayısı: ${message.guild.memberCount} 📥`);
-});
-// DEGİSEN SES KANALLARI \\
+// BOT DM LOG \\
