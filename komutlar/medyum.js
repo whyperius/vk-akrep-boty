@@ -5,8 +5,6 @@ exports.run = (client, message, args) => {
         return message.channel.send(' **Bu Komutu Kullanmak için** \*`ᕒ ᴠᴋ ʏᴇᴛᴋɪʟɪ ᓬ*\` **Rolüne Sahip Olman Lazım** ')
             .then(m => m.delete(5000));
     }
-      const yasak = client.emojis.get('693976996321165385');
-    if (message.channel.id !== '694138848086851664') return message.channel.send(`${yasak} **Bu komutun kullanımı, bu kanalda engellenmiştir.**`).then(m => m.delete(5000));
   if (!message.guild) {
   const ozelmesajuyari = new Discord.RichEmbed()
   .setColor(0xFF0000)
@@ -45,7 +43,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'vk-medyum',
+  name: 'medyum',
   description: 'Bir kullanÄ±cÄ±ya Ã¶zel mesaj yollar.',
-  usage: 'vk-medyum'
+  usage: 'medyum'
 };

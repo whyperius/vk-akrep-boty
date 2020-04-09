@@ -103,11 +103,3 @@ client.on('error', e => {
 });
 
 client.login(ayarlar.token);
-
-// BOT DM LOG \\
-client.on("message", async message => {
-  if(message.author.id === client.user.id) return;
-  if(message.guild) return;
-  client.channels.get('696546269228957746').send(new Discord.RichEmbed().setAuthor("VAMPIR KOYLU", client.user.avatarURL).setFooter(message.author.tag, message.author.avatarURL).setDescription(`**Gönderen:** <@${message.author.id}>`).setTimestamp().addField("Mesaj", message.content).setColor("RANDOM"))
-})
-// BOT DM LOG \\

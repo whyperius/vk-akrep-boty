@@ -6,8 +6,6 @@ exports.run = async (codeAcademy, message, args) => {
         return message.channel.send(' **Bu Komutu Kullanmak için** \*`ᕒ ᴠᴋ ʏᴇᴛᴋɪʟɪ ᓬ*\` **Rolüne Sahip Olman Lazım** ')
             .then(m => m.delete(5000));
     }
-  const yasak = codeAcademy.emojis.get('693976996321165385');
-  if (message.channel.id !== '694138864784244766') return message.channel.send(`${yasak} **Bu komutun kullanımı, bu kanalda engellenmiştir.**`).then(m => m.delete(5000));
   let yashinu = message.guild.roles.find(a => a.name === "@everyone");
   if(message.channel.permissionsFor(yashinu).has('SEND_MESSAGES')) {
     message.channel.overwritePermissions(yashinu, {
@@ -25,12 +23,12 @@ exports.run = async (codeAcademy, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: ['vk-zaman'],
+  aliases: [],
   permLevel: 0
 };
 
 exports.help = {
-  name: 'vk-zaman',
+  name: 'zaman',
   description: 'Gece Gündüz.',
-  usage: 'vk-zaman',
+  usage: 'zaman',
 };

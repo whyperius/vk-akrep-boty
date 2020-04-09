@@ -18,8 +18,6 @@ exports.run = (client, message, args) => {
           talkedRecently.delete(message.author.id);
         }, 600000);// Şuan 5 Saniyedir Değiştirebilirsiniz.
     }  
-  const yasak = client.emojis.get('693976996321165385');
-  if (message.channel.id !== '694138864784244766') return message.channel.send(`${yasak} **Bu komutun kullanımı, bu kanalda engellenmiştir.**`).then(m => m.delete(5000));
   const roller = ["Köylü", "Çiftci", "Oduncu", "İmam", "Seyyar", "Gezgin", "Gazeteci", "Mimar", "Gezgin", "Aşçı", "Dansçı", "Bankacı", "Barmen"]
   const rolata = roller[Math.floor(Math.random()*roller.length)];
   
@@ -37,12 +35,12 @@ exports.run = (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['vk-katıl'],
+  aliases: [],
   permLevel: 0
 };
 
 exports.help = {
-  name: 'vk-katıl',
+  name: 'katıl',
   description: 'Vampir Köylü Katılma.',
-  usage: 'vk-katıl'
+  usage: 'katıl'
 };
