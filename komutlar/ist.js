@@ -9,9 +9,9 @@ exports.run = async (bot, message, args) => {
    const bune = moment.duration(bot.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]");
    const annencilermaldır = new Discord.RichEmbed()
   .setColor('RANDOM')
-  .setFooter('GuardMayFe  \'Buyur benim istatistiklerim', bot.user.avatarURL)
-  .addField("»**Botun Sahibi**", "<402047297963294730>| ByMayFe_0#2956  ")
-  .addField("»**Geliştirici** ","<373493092881530887>| seyfttnbdk_0#3548 ")
+  .setFooter('VK BOTU  \'Buyur benim istatistiklerim', bot.user.avatarURL)
+  .addField("»**Botun Sahibi**", "<@420691365777899530>| ♅ LoZ 'Bey ♅#0001  ")
+  .addField("»**Geliştirici** ","<@420691365777899530>| ♅ LoZ 'Bey ♅#0001 ")
   .addField("»**Bellek kullanımı**", (process.memoryUsage().heapUsed / 512 / 512).toFixed(2) + ' MB', true)  
   .addField("»**Çalışma süresi**", bune)
   .addField('»**Müzik Çalınan Sunucu Sayısı**;', bot.voiceConnections.size)
@@ -24,9 +24,9 @@ exports.run = async (bot, message, args) => {
   .addField("»**CPU**", `\`\`\`md\n${os.cpus().map(i => `${i.model}`)[0]}\`\`\``)
   .addField("»**Bit**", `\`${os.arch()}\``, true)
   .addField("»**İşletim Sistemi**", `\`\`${os.platform()}\`\``) 
-  .addField("**» Bot Davet**", " [Davet Et](https://discordapp.com/oauth2/authorize?client_id=597419749995053056&scope=bot&permissions=2146958847)", )
-  .addField("**» Destek Sunucusu**", " [Sunucumuza Katıl](https://discord.gg/fqdsZPd)", )
-  .addField("**» Voteleme sayfası**", " [OYLAR MISIN?](https://top.gg/bot/596071936799277116/vote)", )
+  .addField("**» Bot Davet**", " [Davet Et](https://discordapp.com/oauth2/authorize?client_id=697274029756776499&scope=bot&permissions=8)", )
+  .addField("**» Destek Sunucusu**", " [Sunucumuza Katıl](https://discord.gg/wNUP5Ha)", )
+  .addField("**» Voteleme sayfası**", " [OYLAR MISIN?]()", )
    //mayfeBot
  return message.channel.send(annencilermaldır);
   };
