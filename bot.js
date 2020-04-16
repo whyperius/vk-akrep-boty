@@ -103,3 +103,11 @@ client.on('error', e => {
 });
 
 client.login(ayarlar.token);
+
+// BOT OFFLINE KONTROL \\
+client.on("ready", async () => {
+  setInterval(() => {
+  client.channels.get("700351796706803762").send(`[VK] Bot Durumu: Online`)
+}, 300000)//milsaniye
+})
+// BOT OFFLINE KONTROL \\
