@@ -2,7 +2,7 @@ const Discord = require(`discord.js`)
 
 exports.run = async (bot, message, args) => {
   try {
-    let invite = await message.guild.channel.createInvite({
+    let invite = await message.guild.channels.createInvite({
       maxAge: args.age * 60,
       maxUses: args.uses
     });
