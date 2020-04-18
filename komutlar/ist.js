@@ -25,7 +25,7 @@ exports.run = async (bot, message, args) => {
   .addField("»**Bit**", `\`${os.arch()}\``, true)
   .addField("»**İşletim Sistemi**", `\`\`${os.platform()}\`\``) 
   .addField("**» Bot Davet**", " [Davet Et](https://discordapp.com/oauth2/authorize?client_id=697274029756776499&scope=bot&permissions=8)", )
-  .addField("**» Destek Sunucusu**", " [Sunucumuza Katıl](https://discord.gg/wNUP5Ha)", )
+  .addField("**» Destek Sunucusu**", " [Sunucumuza Katıl](https://discord.gg/WxNZ5d)", )
   .addField("**» Voteleme sayfası**", " [OYLAR MISIN?]()", )
    //mayfeBot
  return message.channel.send(annencilermaldır);
