@@ -7,19 +7,19 @@ exports.run = (client, message, args) => {
   
     let odalar = message.guild.channels.find(`name`, "odalar"); 
   
-  const kd = args.slice(1).join('')
-  const link = args.slice(0).join('')
+  const kd = args[0]
+  const link = args.slice(1).join('')
 
   
   const oyuncuarama = new Discord.RichEmbed()
       .setColor('RANDOM')
       .setDescription(`
-      Arayan Kişi: <@${message.author.id}>
+      Oyuncu Arayan Kişi: <@${message.author.id}>
 
       KD: ${kd}
-  
+
       Oda Linki: ${link}
-`,true)
+  `,true)
       .setFooter(`Oyuncu Arama #BETA..`)
   odalar.send(oyuncuarama)
 };
