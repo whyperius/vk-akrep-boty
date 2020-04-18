@@ -2,10 +2,14 @@ const Discord = require(`discord.js`)
 
 exports.run = async (bot, message, args) => {
   try {
-    const defaultChannel = guild.channels.find(channel => channel.permissionsFor(guild.me).has("SEND_MESSAGES"));
-    const invite = await defaultChannel.createInvite();
-    await message.author.send(invite.url);
+    let invite = await message.guild.channels.get().createInvite({
+      maxAge: args.age * 60,
+      maxUses: args.uses
+    });
+  
     
+        var voiceChannel = message.member.voiceChannel;
+
   let odalar = message.guild.channels.find(`name`, "odalar"); 
   
   const kd = args[0]
@@ -21,6 +25,7 @@ exports.run = async (bot, message, args) => {
   `,true)
       .setFooter(`Oyuncu Arama #BETA..`)
   odalar.send(oyuncuarama)
+    odalar.send(voiceChannel.name);
   
   }
   catch (e) {
