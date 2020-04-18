@@ -4,18 +4,24 @@ const talkedRecently = new Set();
 
 exports.run = (client, message, args) => {
   message.delete();
-  const isim = args.slice(1).join('')
-  const link = args.slice(2).join('')
-  const kd = args.slice(3).join('')
+  
+    let odalar = message.guild.channels.find(`name`, "odalar"); 
+  
+  const kd = args.slice(1).join('')
+  const link = args.slice(0).join('')
 
   
-  onst  = new Discord.RichEmbed()
+  const oyuncuarama = new Discord.RichEmbed()
       .setColor('RANDOM')
       .setDescription(`
-      deneme
+      Arayan Kişi: <@${message.author.id}>
+
+      KD: ${kd}
+  
+      Oda Linki: ${link}
 `,true)
-      .setFooter(`Vampir Köylü Oyunu..`)
-  message.channel.send(yardım)
+      .setFooter(`Oyuncu Arama #BETA..`)
+  odalar.send(oyuncuarama)
 };
 
 exports.conf = {
