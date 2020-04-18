@@ -113,7 +113,8 @@ client.on("ready", async () => {
 // BOT OFFLINE KONTROL \\
 
 client.on('message', msg => {
-  if (msg.content === 'ping') {
-    BOT: Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
+  if (msg.content === '!botbilgi') {
+  msg.delete();
+  msg.channel.send(`BOT: Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
   }
 });
