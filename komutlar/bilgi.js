@@ -4,7 +4,7 @@ exports.run = (client, message, args) => {
     const yardım = new Discord.RichEmbed()
       .setColor('RANDOM')
       .setDescription(`
-**Köylü** - **Çiftci** - **Oduncu** - **İmam** - **Seyyar** - **Gezgin** - **Gazeteci** - **Mimar** - **Gezgin** - **Aşçı** - **Dansçı** - **Bankacı** - **Barmen**
+**Köylü** - **Çiftci** - **Oduncu** - **İmam** - **Seyyar** - **Gezgin** - **Gazeteci** - **Mimar** - **Aşçı** - **Dansçı** - **Bankacı** - **Barmen**
 Gündüzleri Vampirin Kim Olduğunu Sohbette Konuşarak Tahmin Etmeye Çalışırlar. Oylayarak Vampiri Öldürürler.
 
 **VAMPİR**
@@ -18,7 +18,7 @@ Medyumlar Büyücülerdir Geceleri Bota Vampirin Kim Olduğunu İsmiyle birlikte
 
 
 **Oyun Nasıl Oynanır?**
-!!vk-katıl yazarak oyuna dahil olurlar. Rolleri Özel Mesaj İle Bildirilir.
+!katıl yazarak oyuna dahil olurlar. Rolleri Özel Mesaj İle Bildirilir.
 Gündüzleri Vampirin Kim Olduğunu Ahali Sohbette Bulmaya Çalışırlar.
 Geceleri İse Vampirin Ortaya Çıkmasıyla Bir Bir Katledilirler.
 Ahali, Vampiri Bulup Astıklarında İse Oyun Sona Ermiştir.
