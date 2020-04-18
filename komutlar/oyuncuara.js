@@ -1,15 +1,15 @@
-const Discord = require('discord.js');
-const db = require('quick.db');
-const talkedRecently = new Set();
+const Discord = require(`discord.js`)
 
-exports.run = (client, message, args) => {
-  message.delete();
+exports.run = async (bot, message, args) => {
+  try {
+    let invite = await message.guild.channel.createInvite({
+      maxAge: args.age * 60,
+      maxUses: args.uses
+    });
   
-    let odalar = message.guild.channels.find(`name`, "odalar"); 
+  let odalar = message.guild.channels.find(`name`, "odalar"); 
   
   const kd = args[0]
-  const link = args.slice(1).join('')
-
   
   const oyuncuarama = new Discord.RichEmbed()
       .setColor('RANDOM')
@@ -18,21 +18,26 @@ exports.run = (client, message, args) => {
 
       KD: ${kd}
 
-      Oda Linki: ${link}
+      Oda Linki: https://discord.gg/${invite.code}
   `,true)
       .setFooter(`Oyuncu Arama #BETA..`)
   odalar.send(oyuncuarama)
+  
+  }
+  catch (e) {
+return
+  }
 };
 
 exports.conf = {
   enabled: true,
-  guildOnly: false,
-  aliases: [],
+  guildOnly: true,
+  aliases: ['davetoluştur'],
   permLevel: 0
 };
 
 exports.help = {
   name: 'oyuncu-ara',
-  description: 'Oyuncu Arama.',
+  description: 'davet-oluştur',
   usage: 'oyuncu-ara'
 };
