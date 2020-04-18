@@ -2,14 +2,13 @@ const Discord = require(`discord.js`)
 
 exports.run = async (bot, message, args) => {
   try {
-    let invite = await message.guild.channels.get().createInvite({
+    let voiceChannel = message.member.voiceChannel;
+    let odd = voiceChannel.name;
+    let invite = await message.guild.channels.find(`name`, (odd)).createInvite({
       maxAge: args.age * 60,
       maxUses: args.uses
     });
   
-    
-        var voiceChannel = message.member.voiceChannel;
-
   let odalar = message.guild.channels.find(`name`, "odalar"); 
   
   const kd = args[0]
