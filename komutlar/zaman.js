@@ -1,23 +1,34 @@
-const Discord = require("discord.js");
-const db = require("quick.db");
-module.exports.run = async (bot, message, args) => {
-  let kanal = await db.fetch(`davetkanal_${message.guild.id}`);
-  const embed = new Discord.RichEmbed()
-    .setColor("BLACK")
-    .setDescription(`Davet kanalı: <#${kanal}> `);
-  message.channel.send(embed);
+const Discord = require('discord.js');
+
+exports.run = async (codeAcademy, message, args) => {
+    message.delete()
+    if (!message.member.roles.find("name", "ᕒ ᴠᴋ ʏᴇᴛᴋɪʟɪ ᓬ")) {
+        return message.channel.send(' **Bu Komutu Kullanmak için** \*`ᕒ ᴠᴋ ʏᴇᴛᴋɪʟɪ ᓬ*\` **Rolüne Sahip Olman Lazım** ')
+            .then(m => m.delete(5000));
+    }  let yashinu = message.guild.roles.find(a => a.name === "@everyone");
+  if(message.channel.permissionsFor(yashinu).has('SEND_MESSAGES')) {
+    message.channel.overwritePermissions(yashinu, {
+      SEND_MESSAGES: false,
+    });
+    message.channel.send('Gece Oldu, İyi Şanslar Dostum.!')
+  } else {
+    message.channel.overwritePermissions(yashinu, {
+      SEND_MESSAGES: null,
+    });
+    message.channel.send('Gündüz Oldu, Herkese Günaydın.!')
+  };
 };
 
-module.exports.conf = {
-  aliases: ["davetkanalne"],
-  permLevel: 2,
+exports.conf = {
   enabled: true,
   guildOnly: true,
-  kategori: "moderasyon"
+  aliases: ['lock'],
+  permLevel: 0
 };
 
-module.exports.help = {
-  name: "davet-kanal-ne",
-  description: "davet-kanal-ne",
-  usage: "davet-kanal-ne"
+exports.help = {
+  name: 'zaman',
+  description: 'Kanalı kilitler.',
+  usage: 'zaman',
+  kategori: 'yetkili'
 };
